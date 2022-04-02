@@ -5,9 +5,7 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        indices = []
         dict = {}
-        first, second = 0, 0
         for i in range(len(nums)):
             dict[target - nums[i]] = i
         for i in range(len(nums)):
