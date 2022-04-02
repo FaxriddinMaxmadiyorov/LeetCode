@@ -5,7 +5,6 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-#         3213213
         dict = {}
         for i in range(len(nums)):
             dict[target - nums[i]] = i
