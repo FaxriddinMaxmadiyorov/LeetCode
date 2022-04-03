@@ -4,7 +4,7 @@ class Solution:
         for k in range(0, numRows):
             temp = []
             for i in range(0, k + 1):
-                temp.append(self.fact(k) // (self.fact(i) * self.fact(k - i)))
+                temp.append(math.factorial(k) // (math.factorial(i) * math.factorial(k - i)))
                 # print(k, i)
             res.append(temp)
         return res
