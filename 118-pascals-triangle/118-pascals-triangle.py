@@ -8,9 +8,3 @@ class Solution:
                 # print(k, i)
             res.append(temp)
         return res
-    
-    def fact(self, n):
-        res = 1
-        for i in range(1, n + 1):
-            res *= i
-        return res
