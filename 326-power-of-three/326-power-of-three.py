@@ -1,3 +1,10 @@
 class Solution:
     def isPowerOfThree(self, n: int) -> bool:
-        return n > 0 and 3 ** 100 % n == 0
+        if n < 1:
+            return False
+        if n == 1:
+            return True
+        elif n % 3 == 0:
+            return self.isPowerOfThree(n // 3)
+        else:
+            return False
