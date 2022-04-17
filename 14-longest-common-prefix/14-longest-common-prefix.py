@@ -13,11 +13,10 @@ class Solution:
                 i += 1
                 j += 1
             return res
-        if len(strs) > 1:
-            a = strs[0]
-            for i in range(1, len(strs)):
-                b = strs[i]
-                a = f(a, b)
-            return a
-        else:
-            return strs[0]
+        
+        a = strs[0]
+        for i in range(1, len(strs)):
+            b = strs[i]
+            a = f(a, b)
+        return a
+        
