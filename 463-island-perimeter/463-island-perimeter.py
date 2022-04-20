@@ -1,21 +1,33 @@
 class Solution(object):
-    def islandPerimeter(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
-        m, n = len(grid), len(grid[0])
-        num = 0
+    def islandPerimeter(self, grid: List[List[int]]) -> int:
+        res = 0
+        
+        rows, cols = len(grid), len(grid[0])
+        
+        
+        def dfs(grid, i, j):
+            nonlocal res
+            if i<0 or i>rows-1 or j<0 or j>cols-1:
+                res += 1
+                return 
+            
+            if grid[i][j] == 0:
+                res += 1
+                return
+            
+            if grid[i][j] == -1:
+                return
+            
+            grid[i][j] = -1
+            directions = [[1, 0], [-1, 0], [0, 1], [0, -1]]
+            for dr, dc in directions:
+                dfs(grid, i+dr, j+dc)
 
-        for r in range(m):
-            for c in range(n):
+            
+        
+        
+        for r in range(rows):
+            for c in range(cols):
                 if grid[r][c] == 1:
-                    if r == 0 or grid[r-1][c] == 0:
-                        num += 1
-                    if r == m-1 or grid[r+1][c] == 0:
-                        num += 1
-                    if c == 0 or grid[r][c-1] == 0:
-                        num += 1
-                    if c == n-1 or grid[r][c+1] == 0:
-                        num += 1
-        return num
+                    dfs(grid, r, c)
+                    return res
