@@ -1,13 +1,7 @@
 class Solution:
     def firstUniqChar(self, s: str) -> int:
-        a = {}
-        temp = ""
-        for i in range(len(s)):
-            if s[i] not in a:
-                a[s[i]] = 1
-            else:
-                a[s[i]] += 1
-                
+        a = collections.Counter(s)
+        # return a       
 
         for i in range(len(s)):
             if a[s[i]] == 1:
