@@ -4,4 +4,4 @@ class Solution:
         for i in range(1, len(nums)):
             max_local = max(max_local + nums[i], nums[i])
             max_global = max(max_local, max_global)
-        return max_global
+        return max(max(nums), max_global)
