@@ -3,5 +3,5 @@ class Solution:
         s = 0
         nums.sort()
         for i in range(len(nums) // 2):
-            s += min(nums[2 * i], nums[2 * i + 1])
+            s += nums[2*i]
         return s
