@@ -8,4 +8,4 @@ class Solution:
             if i in h:
                 res.add(i)
                 
-        return res
+        return list(res)
