@@ -1,9 +1,9 @@
 class Solution:
     def findTheDifference(self, s: str, t: str) -> str:
-        s = sorted(s)
-        t = sorted(t)
-        for i in range(len(t)):
-            if i < len(s) and s[i] == t[i]:
-                continue
-            else:
-                return t[i]
+        s = s + t
+        v = 0
+        for i in s:
+            v = v ^ ord(i)
+        return chr(v)
+    # 0 ^ a = a ^ 0 = a
+    # a ^ b ^ c = c ^ a ^ b
