@@ -3,17 +3,7 @@ class Solution:
         def check(i, j):
             s1 = s[i:j]
             s2 = s[i+1:j+1]
-            print(s1, s2)
-            d = True
-            e = True
-            for k in range(len(s1) // 2):
-                if s1[k] != s1[len(s1) - k - 1]:
-                    d = False
-            
-            for k in range(len(s2) // 2):
-                if s2[k] != s2[len(s2) - k - 1]:
-                    e = False
-            return d == True or e == True
+            return s1 == s1[::-1] or s2 == s2[::-1]
         
         if s == s[::-1]:
             return True
