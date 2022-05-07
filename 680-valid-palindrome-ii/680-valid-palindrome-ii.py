@@ -7,11 +7,9 @@ class Solution:
         
         if s == s[::-1]:
             return True
-        print("hjh")
         i, j = 0, len(s) - 1
         while i < j:
             if s[i] != s[j]:
-                print(i, j)
                 if check(i, j):
                     return True
                 return False
