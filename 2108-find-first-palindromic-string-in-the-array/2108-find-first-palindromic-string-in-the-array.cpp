@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool yesno(string &s){
+    bool yesno(string s){
         int i = 0, j = s.size()-1;
         while (i < j)
         {
