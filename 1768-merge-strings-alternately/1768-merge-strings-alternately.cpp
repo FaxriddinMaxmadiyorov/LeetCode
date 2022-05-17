@@ -5,11 +5,10 @@ public:
         int i = 0, j = 0, k = 0;
         while (i < word1.size() || j < word2.size())
         {
-            if (k % 2 == 0 && i < word1.size())
-                res += word1[i], i++;
-            else if (k % 2 && j < word2.size())
-                res += word2[j], j++;
-            k++;
+            if (i < word1.size())
+                res += word1[i++];
+            if (j < word2.size())
+                res += word2[j++];
         }
         return res;
     }
