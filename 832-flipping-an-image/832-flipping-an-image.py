@@ -12,5 +12,5 @@ class Solution(object):
                 i += 1
                 j -= 1
             for j in range(0, n):
-                image[k][j] = image[k][j] ^ 1
+                image[k][j] = 1 - image[k][j] 
         return image
