@@ -14,7 +14,6 @@ public:
                         return;
                 }
                 swap(nums[i], nums[start]);
-                start = i + 1;
             }
         }
     }
