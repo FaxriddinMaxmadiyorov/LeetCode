@@ -1,13 +1,12 @@
 # @param {Integer} n
 # @return {Integer}
 def tribonacci(n)
-    f = Array.new
-    f << 0
-    f << 1
-    f << 1
-    for i in 3..n
-        s = f[-1]+f[-2]+f[-3]
-        f << s
-    end
-    f[n]
+    trib(n, 0, 1, 1)
+end
+
+def trib(n, a, b, c)
+    return a if n == 0
+    return b if n == 1
+    return c if n == 2
+    trib(n - 1, b, c, a + b + c)
 end
