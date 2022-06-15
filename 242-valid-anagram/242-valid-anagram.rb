@@ -12,18 +12,8 @@ def is_anagram(s, t)
   t.each_char do |i|
         tt[i] += 1    
   end
-   
-  ss.each do |key, value|
-    if ss[key] != tt[key]
-        return false  
-    end
-  end
-    tt.each do |key, value|
-    if ss[key] != tt[key]
-        return false  
-    end
-  end
-  return true
+  ss == tt
+  # return true
 end
 is_anagram("jh", "klsdkf")
 # s = "huyuy"
