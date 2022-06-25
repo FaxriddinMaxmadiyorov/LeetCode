@@ -10,5 +10,5 @@ def peak_index_in_mountain_array(arr)
            r = m
        end
     end
-    return l
+    return r
 end
