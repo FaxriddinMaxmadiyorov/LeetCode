@@ -1,18 +1,21 @@
-def peak_index_in_mountain_array(a)
-    return find_mountain_index_from(0, a.length - 1, a)
+def peak_index_in_mountain_array(arr)
+    low, high = 0, arr.length  
+    return f(low, high, arr)
 end
 
-def find_mountain_index_from(start_idx, end_idx, a)
-    if start_idx == end_idx
-        return start_idx
+def f(low, high, arr)
+    if low == high
+        return low    
     end
-
-    midpoint = (end_idx + start_idx) / 2
-    if (a[midpoint] > a[midpoint - 1] && a[midpoint] > a[midpoint + 1]) 
-        return midpoint
-    elsif a[midpoint] < a[midpoint + 1] # too small; move right
-        return find_mountain_index_from(midpoint + 1, end_idx, a)
-    else # too big; move left
-        return find_mountain_index_from(start_idx, midpoint - 1, a)
+    
+    mid = (low + high) / 2
+    if mid > 0 and mid < arr.length and arr[mid] > arr[mid - 1] and arr[mid] > arr[mid + 1]
+        return mid
+    elsif arr[mid] < arr[mid + 1]
+        low = mid + 1
+    else
+        high = mid - 1
     end
+    
+    return f(low, high, arr)
 end
