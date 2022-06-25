@@ -1,14 +1,18 @@
-# @param {Integer[]} arr
-# @return {Integer}
-def peak_index_in_mountain_array(arr)
-    l, r = 0, arr.length - 1
-    while l < r 
-       m = (l + r) / 2
-       if arr[m] < arr[m + 1]
-           l = m + 1
-       else
-           r = m
-       end
+def peak_index_in_mountain_array(a)
+    return find_mountain_index_from(0, a.length - 1, a)
+end
+
+def find_mountain_index_from(start_idx, end_idx, a)
+    if start_idx == end_idx
+        return start_idx
     end
-    return r
+
+    midpoint = (end_idx + start_idx) / 2
+    if (a[midpoint] > a[midpoint - 1] && a[midpoint] > a[midpoint + 1]) 
+        return midpoint
+    elsif a[midpoint] < a[midpoint + 1] # too small; move right
+        return find_mountain_index_from(midpoint + 1, end_idx, a)
+    else # too big; move left
+        return find_mountain_index_from(start_idx, midpoint - 1, a)
+    end
 end
