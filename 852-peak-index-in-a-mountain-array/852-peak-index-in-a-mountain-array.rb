@@ -13,6 +13,6 @@ def find_mountain_index_from(start_idx, end_idx, a)
     elsif a[midpoint] < a[midpoint + 1] # too small; move right
         return find_mountain_index_from(midpoint + 1, end_idx, a)
     else # too big; move left
-        return find_mountain_index_from(start_idx, midpoint, a)
+        return find_mountain_index_from(start_idx, midpoint - 1, a)
     end
 end
