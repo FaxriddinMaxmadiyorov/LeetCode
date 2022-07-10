@@ -36,7 +36,6 @@ public:
                 r_found = false;
                 left++; right--;
             }
-            // cout<<left<<" "<<right<<" "<<s<<endl;
         }
         return s;
     }
