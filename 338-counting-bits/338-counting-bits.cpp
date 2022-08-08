@@ -27,8 +27,6 @@ public:
             else
                 a.push_back(a[i / 2]);
         }
-        for (int i = 0; i <= n; i++)
-            cout<<i<<" -> "<<a[i]<<endl;
         return a;
     }
 };
