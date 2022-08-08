@@ -4,7 +4,6 @@ class Solution:
         goal = '{0:0160b}'.format(goal)
         c = 0
         for i in range(len(start)):
-            print(i, len(start))
             if start[i] != goal[i]:
                 c += 1
                 
