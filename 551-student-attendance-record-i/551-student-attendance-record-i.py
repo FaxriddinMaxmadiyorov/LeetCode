@@ -15,7 +15,6 @@ class Solution:
                 if ch == 'A':
                     a += 1
                         
-        print(a, max_late)
         if a < 2 and max_late < 3:
             return True
         return False
