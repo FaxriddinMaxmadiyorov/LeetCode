@@ -3,19 +3,19 @@ class Solution:
         a, l, max_late = 0, 0, 0
         last_day_late = False
         for ch in s:
-            if ch == 'A':
-                a += 1
-                last_day_late = False
-            elif last_day_late == False and ch == 'L':
-                l = 1
-                last_day_late = True
-            elif last_day_late and ch == 'L':
-                l += 1
+            if ch == 'L':
+                if last_day_late:
+                    l += 1
+                    max_late = max(max_late, l)
+                else:
+                    l = 1
+                    last_day_late = True
             else:
                 last_day_late = False
-            max_late = max(l, max_late)
+                if ch == 'A':
+                    a += 1
+                        
         print(a, max_late)
         if a < 2 and max_late < 3:
             return True
         return False
-# "LALL"
