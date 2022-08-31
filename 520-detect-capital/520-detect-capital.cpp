@@ -5,13 +5,11 @@ public:
             return true;
         return false;
     }
-    
     bool isLow(char c){
         if (c >= 97 && c <= 122)
             return true;
         return false;
     } 
-    
     bool detectCapitalUse(string word) {
         int n = word.size(); bool all_cap = false, only_first_cap = false;
         // all letters are capital
