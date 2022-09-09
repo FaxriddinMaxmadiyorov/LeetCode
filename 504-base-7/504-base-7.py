@@ -1,7 +1,12 @@
-# @param {Integer} num
-# @return {String}
-def convert_to_base7(num)
-    return '-' + convert_to_base7(-num) if num < 0 
-    return num.to_s if num < 7
-    return convert_to_base7(num / 7) + (num % 7).to_s
-end
+class Solution:
+    def convertToBase7(self, num: int) -> str:
+        temp, res = abs(num), ""
+        while temp >= 0:
+            res += str(temp % 7)
+            temp //= 7
+            if temp == 0:
+                break
+        res = "".join(reversed(res))
+        if num < 0:
+            return "-" + res
+        return res
